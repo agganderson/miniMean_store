@@ -1,0 +1,26 @@
+<div ng-controller='cusCtrl'>
+	<form class="form-inline" role="form">
+	  <div class="form-group">
+	    <label for="name">Name:</label>
+	    <input type="text" class="form-control" ng-model="newCus.name">
+	  </div>
+	  <button ng-click="addCus()" class="btn btn-default btn-sm">Add Customer</button>
+	</form>
+	<hr>
+	<p>Search: </p> <input type="text" ng-model="filter_name">
+	<hr>
+	<table class="table table-striped">
+	    <thead>
+	      <tr>
+	        <th>Name:</th>
+	        <th>Created At:</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr ng-repeat="customer in customers | filter:filter_name">
+	        <td>{{customer.name}}</td>
+	        <td>{{customer.created_at|date:"MMMM dd, yyyy"}}</td>
+	      </tr>
+	    </tbody>
+	</table>
+</div>

@@ -1,0 +1,29 @@
+<div ng-controller="dashCtrl">
+	<div class="sidebar">
+		<p>Search: </p> <input type="text" ng-model="filter_name">
+	</div>
+	<div class="main">
+		<div class="box" ng-repeat="product in products">
+			<img src="{{product.image}}" height="100" width="100"></img>
+			<p ng-bind="product.name"></p>
+			<p ng-bind="product.desc"></p>
+			Quantity:<p ng-bind="product.quantity"></p>
+		</div>
+		<hr>
+		<a href="#/products">Products</a>
+
+		<h3>Recent Orders</h3>
+		<div id="recent" ng-repeat="order in orders">
+			<p>{{order.customer_name}} purchased {{order.product}} on {{order.created_at|date:'MMMM dd, yyyy'}}.</p>
+		</div>
+		<a href="#/orders">Orders</a>
+		<hr>
+
+		<h3>Customers</h3>
+		<div id="customers" ng-repeat="customer in customers">
+			<p>{{customer.name}} joined the Mean Store.</p>
+		</div>
+		<a href="#/customers">Customers</a>
+
+	</div>
+</div>

@@ -1,0 +1,54 @@
+<div class="sidebar" ng-controller="proCtrl">
+	<p>Search: </p> <input type="text" ng-model="filter_name">
+	<hr>
+	<h2>Add a New Product:</h2>
+	<form role="form">
+	  <div class="form-group">
+	    <label for="name">Name:</label>
+	    <input type="text" class="form-control" ng-model="newPro.name">
+	  </div>
+	  <div class="form-group">
+	    <label for="image">Image (url):</label>
+	    <input type="text" class="form-control" ng-model="newPro.image">
+	  </div>
+	  <div class="form-group">
+	    <label for="description">Description:</label>
+	    <input type="text" class="form-control" ng-model="newPro.desc">
+	  </div>
+	  <div class="form-group">
+	  	<label for="quantity">Quantity:</label>	
+	  	<select ng-model="newPro.quantity">
+	  		<option>1</option>
+	  		<option>2</option>
+	  		<option>3</option>
+	  		<option>4</option>
+	  		<option>5</option>
+	  		<option>6</option>
+	  		<option>7</option>
+	  		<option>8</option>
+	  		<option>9</option>
+	  		<option>10</option>
+	  		<option>11</option>
+	  		<option>12</option>
+	  		<option>13</option>
+	  		<option>14</option>
+	  		<option>15</option>
+	  		<option>16</option>
+	  		<option>17</option>
+	  		<option>18</option>
+	  		<option>19</option>
+	  		<option>20</option>
+	  	</select>
+	  </div>
+	  <button ng-click="addPro()" class="btn btn-primary btn-sm">Create</button>
+	</form>
+</div>
+
+<div class="main" ng-controller="proCtrl">
+	<div class="box" ng-repeat="product in products">
+		<img src="{{product.image}}" height="100" width="100">
+		<p ng-bind="product.name"></p>
+		<p ng-bind="product.desc"></p>
+		Quantity:<p ng-bind="product.quantity"></p>
+	</div>
+</div>
