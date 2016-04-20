@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+vatevar mongoose = require('mongoose');
 var fs = require('fs');
 mongoose.connect('mongodb://localhost/mean_store');
 var models_path = __dirname + '/../models';
